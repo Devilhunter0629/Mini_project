@@ -33,7 +33,7 @@
 .alert > .alert__close {
   background: transparent;
   cursor: pointer;
-  border: none;
+  border: 1px;
   outline: transparent;
   font-size: 2rem;
   transition: var(--generic-transition);
