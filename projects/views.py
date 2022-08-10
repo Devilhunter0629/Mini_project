@@ -41,7 +41,7 @@ def project(request, pk):
 @login_required(login_url='login')
 def createProject(request):
     profile = request.user.profile
-    form = ProjectForm
+    form = ProjectForm()
     if request.method == 'POST':
         form = ProjectForm(request.POST, request.FILES)
         if form.is_valid():

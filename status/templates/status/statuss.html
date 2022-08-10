@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+
+<main class="messagePage my-xl">
+    <div class="content-box">
+        <form class="form" action="{% url 'statuses' %}" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form__field">
+              <label for="formInput#textarea">What's on your mind?</label>
+              {{ field }}
+            </div>
+            {% endfor %}
+            <input class="btn btn--sub btn--lg" type="submit" value="Post" />
+        </form>
+        <br>
+        {% for status in statuss %}
+        <div class="message">
+            <a href="{% url 'user-profile' status.owner.id %}" class="message__author">{{ status.owner.name }}</a>
+            <p class="message__date">{{ status.created }}</p>
+            <div class="message__body">
+            {{ status.body|linebreaksbr }}
+            </div>
+            <p class="project--rating">
+                {{ status.upvotes }} UpVote{{ status.upvotes|pluralize:"s" }}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+
+
+{% endblock content %}
+
+

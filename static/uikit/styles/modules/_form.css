@@ -91,7 +91,7 @@ textarea.input:active {
 
 .input--textarea {
   width: 100%;
-  min-height: 14rem;
+  min-height: 8rem;
   resize: none;
 }
 

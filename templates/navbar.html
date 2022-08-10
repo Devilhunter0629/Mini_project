@@ -14,7 +14,7 @@
         <ul class="header__menu">
           <li class="header__menuItem"><a href="{% url 'profiles' %}">Developers</a></li>
           <li class="header__menuItem"><a href="{% url 'projects' %}">Projects</a></li>
-          <li class="header__menuItem"><a href="">Blogs</a></li>
+          <li class="header__menuItem"><a href="{% url 'statuses' %}">Status</a></li>
           
           {% if request.user.is_authenticated %}
           <li class="header__menuItem"><a href="{% url 'inbox' %}">Inbox</a></li>
