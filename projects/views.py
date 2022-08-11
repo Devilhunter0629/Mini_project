@@ -10,7 +10,7 @@ from django.contrib import messages
 
 def projects(request):
     projects , search_query = searchProjects(request)
-    custom_range, projects = paginateProjects(request, projects, 6)
+    custom_range, projects = paginateProjects(request, projects, 1)
 
     context = {
         'projects' : projects,
